@@ -1,4 +1,4 @@
-# Zalamati LMDpro Autonomous AI Agent Ecosystem & Global eLearning Academy
+# LMDpro | Autonomous AI Agentic Global eLearning Ecosystem 
 
 [![Build Status](https://img.shields.io/badge/Build-Passing-emerald)](https://github.com)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.8-blue)](https://www.typescriptlang.org/)

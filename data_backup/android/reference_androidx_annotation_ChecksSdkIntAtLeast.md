@@ -1,0 +1,140 @@
+--- source: https://developer.android.com/reference/androidx/annotation/ChecksSdkIntAtLeast ---
+
+* [Android Developers](https://developer.android.com/)
+* [Develop](https://developer.android.com/develop)
+* [API reference](https://developer.android.com/reference)
+
+Stay organized with collections
+
+Save and categorize content based on your preferences.
+
+
+
+
+
+# ChecksSdkIntAtLeast
+
+Artifact: [androidx.annotation:annotation](/jetpack/androidx/releases/annotation)
+
+[View Source](https://cs.android.com/search?q=file:androidx/annotation/ChecksSdkIntAtLeast.jvm.kt+class:androidx.annotation.ChecksSdkIntAtLeast)
+
+Added in [1.2.0](/jetpack/androidx/releases/annotation#1.2.0)
+
+---
+
+[Kotlin](/reference/kotlin/androidx/annotation/ChecksSdkIntAtLeast "View this page in Kotlin")
+|Java
+
+```
+@MustBeDocumented  
+@Retention(value = AnnotationRetention.BINARY)  
+@Target(allowedTargets = [AnnotationTarget.FUNCTION, AnnotationTarget.PROPERTY_GETTER, AnnotationTarget.PROPERTY_SETTER, AnnotationTarget.FIELD])  
+public annotation ChecksSdkIntAtLeast
+```
+
+---
+
+Denotes that the annotated method checks if the SDK\_INT API level is at least the given value, and either returns it or executes the given lambda in that case (or if it's a field, has the value true).
+
+The API level can be specified either as an API level via .api, or for preview platforms as a codename (such as "R") via .codename}, or it can be passed in to the method; in that case, the parameter containing the API level or code name should be specified via .parameter, where the first parameter is numbered 0.
+
+Examples:
+
+```
+// Simple version check  
+@ChecksSdkIntAtLeast(api = Build.VERSION_CODES.O)  
+public static boolean isAtLeastO() {  
+    return Build.VERSION.SDK_INT >= 26;  
+}  
+  
+// Required API level is passed in as first argument, and function  
+// in second parameter is executed if SDK_INT is at least that high:  
+@ChecksSdkIntAtLeast(parameter = 0, lambda = 1)  
+inline fun fromApi(value: Int, action: () -> Unit) {  
+    if (Build.VERSION.SDK_INT >= value) {  
+        action()  
+    }  
+}  
+  
+// Kotlin property:  
+@get:ChecksSdkIntAtLeast(api = Build.VERSION_CODES.GINGERBREAD)  
+val isGingerbread: Boolean  
+get() = Build.VERSION.SDK_INT >= Build.VERSION_CODES.GINGERBREAD  
+  
+// Java field:  
+@ChecksSdkIntAtLeast(api = Build.VERSION_CODES.LOLLIPOP)  
+public static final boolean SUPPORTS_LETTER_SPACING =  
+Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP;
+```
+
+## Summary
+
+| Public constructors |
+| --- |
+| `ChecksSdkIntAtLeast(     int api,     @NonNull String codename,     int parameter,     int lambda,     int extension )` |
+
+| Public methods |
+| --- |
+| `final int` | `getApi()`  The API level is at least the given level |
+| `final @NonNull String` | `getCodename()`  The API level is at least the given codename (such as "R") |
+| `final int` | `getExtension()`  The associated Extension SDK id, or 0 if the Android platform |
+| `final int` | `getLambda()`  The parameter number for a lambda that will be executed if the API level is at least the value supplied via `api`, `codename` or `parameter` |
+| `final int` | `getParameter()`  The API level is specified in the given parameter, where the first parameter is number 0 |
+
+## Public constructors
+
+### ChecksSdkIntAtLeast
+
+Added in [1.10.0](/jetpack/androidx/releases/annotation#1.10.0)
+
+```
+public ChecksSdkIntAtLeast(  
+    int api,  
+    @NonNull String codename,  
+    int parameter,  
+    int lambda,  
+    int extension  
+)
+```
+
+## Public methods
+
+### getApi
+
+```
+public final int getApi()
+```
+
+The API level is at least the given level
+
+### getCodename
+
+```
+public final @NonNull String getCodename()
+```
+
+The API level is at least the given codename (such as "R")
+
+### getExtension
+
+```
+public final int getExtension()
+```
+
+The associated Extension SDK id, or 0 if the Android platform
+
+### getLambda
+
+```
+public final int getLambda()
+```
+
+The parameter number for a lambda that will be executed if the API level is at least the value supplied via `api`, `codename` or `parameter`
+
+### getParameter
+
+```
+public final int getParameter()
+```
+
+The API level is specified in the given parameter, where the first parameter is number 0

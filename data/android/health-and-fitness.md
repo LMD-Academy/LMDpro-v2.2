@@ -1,0 +1,110 @@
+# Android Health & Fitness
+
+[//]: # (source: [developer.android.com](https://developer.android.com/health-and-fitness))
+
+Google Fit APIs will be supported until the end of 2026. To learn about the recommended migration paths, see [Migration guide](/health-and-fitness/health-connect/migration/fit).
+![Hero 2 Image](https://developer.android.com/static/images/health-and-fitness/hero-2.png)
+![Health And Fitness Icon](https://developer.android.com/static/images/dev-center/icons/health-and-fitness.svg)Developer center
+
+Build a seamless and unified health and fitness data experience. Connect data across Android mobile, Wear OS, and the Fitbit ecosystem, empowering users with control over their data.
+
+[![Fitbit Icon](/static/images/spot-icons/fitbit.svg)
+
+Looking for Fitbit Web APIs?
+
+You can find them on Fitbit Developer
+
+arrow\_forward](https://dev.fitbit.com/build/reference/web-api/)
+
+## Building the Future of Health
+
+Join us in shaping a connected health ecosystem. Our vision is to break down data silos, enhance data quality and acquisition, and improve the developer experience to unlock the full potential of health and fitness data.
+
+* [![Health Connect Logo Icon](/static/images/picto-icons/health-connect-logo.svg)
+  Access health data  
+  with Health Connect](/health-and-fitness/guides/health-connect)
+* [![Health Services Logo Icon](/static/images/picto-icons/health-services-logo.svg)
+  Access Wear OS sensors  
+  with Health Services](/health-and-fitness/guides/health-services)
+* [![Vitals Icon](/static/images/picto-icons/vitals.svg)
+  Migrate from Google Fit](/health-and-fitness/guides/health-connect/migrate/migration-guide)
+
+![Android Jetpack Icon](https://developer.android.com/static/images/logos/android-jetpack.svg)
+
+## Core platforms
+
+Already know what Health platform you want to develop on? Go straight to the docs that you need here.
+
+### [Health and fitness data](https://developer.android.com/health-and-fitness/guides/health-connect/develop/get-started)
+
+Learn how to interact with **Health Connect** to safely share health data with other apps on-device or derive deeper health insights.
+
+[Get started](https://developer.android.com/health-and-fitness/guides/health-connect/develop/get-started)
+
+### [Medical records](https://developer.android.com/health-and-fitness/guides/medical-records)
+
+Learn how to extend **Health Connect** to include basic medical data in the Fast Healthcare Interoperability Resources (FHIR®) format.
+
+[Get started](https://developer.android.com/health-and-fitness/guides/medical-records)
+
+### [Health Services on Wear OS](https://developer.android.com/health-and-fitness/guides/health-services)
+
+Learn how to supplement your Wear OS app with high-quality sensor data in a power efficient way.
+
+[Get started](https://developer.android.com/health-and-fitness/guides/health-services)
+
+## Health Connect Jetpack Library 1.1.0 is now stable
+
+We are excited to announce that the Health Connect Jetpack library has reached its 1.1.0 stable release. This milestone provides developers with the confidence and reliability needed to build production-ready health and fitness experiences at scale.
+
+[View release notes](https://developer.android.com/jetpack/androidx/releases/health-connect)
+
+## Featured guides and resources
+
+A selection of the most-frequented content in the Health & Fitness Developer Center.
+
+Codelab
+Guide
+Video
+
+Health Connect
+Health Services
+Google Fit
+
+## Case studies
+
+[![Peloton Image](https://developer.android.com/static/images/health-and-fitness/developer-stories/peloton.jpg)](https://www.youtube.com/watch?v=mSejMEIbAzU)
+
+Multidevice
+
+### [Peloton’s multidevice support led to an uptick in user engagement](https://www.youtube.com/watch?v=mSejMEIbAzU)
+
+[![Withings Image](https://developer.android.com/static/images/health-and-fitness/developer-stories/withings.png)](https://android-developers.googleblog.com/2023/03/withings-reduces-data-sync-code-with--health-and-fitness-api-health-connect.html)
+
+Health Connect
+
+### [Withings halves its data sync code with Health Connect](https://android-developers.googleblog.com/2023/03/withings-reduces-data-sync-code-with--health-and-fitness-api-health-connect.html)
+
+[![Strava Image](https://developer.android.com/static/images/health-and-fitness/developer-stories/strava.jpg)](https://www.youtube.com/watch?v=ENeSNZ3s0Jw&t=1s)
+
+Wear OS
+
+### [Strava expands to Wear OS and sees 30% more users](https://www.youtube.com/watch?v=ENeSNZ3s0Jw&t=1s)
+
+### Connect with us
+
+[![Bug Icon](https://developer.android.com/static/images/picto-icons/bug.svg)](https://issuetracker.google.com/issues/new?component=1676744&template=2072671)
+
+### [Android Health Issue Tracker](https://issuetracker.google.com/issues/new?component=1676744&template=2072671)
+
+Share feedback or file bugs.
+
+[File an issue](https://issuetracker.google.com/issues/new?component=1676744&template=2072671)
+
+[![Mail Icon](https://developer.android.com/static/images/picto-icons/mail.svg)](https://services.google.com/fb/forms/HealthDevNewsSignup)
+
+### [Developer Newsletter](https://services.google.com/fb/forms/HealthDevNewsSignup)
+
+Get the latest news and updates.
+
+[Sign up](https://services.google.com/fb/forms/HealthDevNewsSignup)

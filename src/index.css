@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap');
+@import "tailwindcss";
+
+:root {
+  --font-arabic: 'Cairo', system-ui, sans-serif;
+}
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-arabic);
+  background-color: #0B1015;
+  color: #e2e8f0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: 'kern' on, 'liga' on, 'calt' on;
+  letter-spacing: normal;
+  line-height: 1.6;
+}
+
+/* PERFORMANCE OPTIMIZATIONS FOR DASHBOARD CARDS & HEAVY LISTS */
+.cv-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 300px;
+}
+
+.will-change-transform {
+  will-change: transform;
+}
+
+/* LIGHT THEME OVERRIDES */
+html[data-theme='light'],
+body.light-theme {
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+html[data-theme='light'] .bg-ambient-gradient {
+  background: radial-gradient(circle at 18% 22%, rgba(224, 242, 254, 0.6) 0%, transparent 50%),
+              radial-gradient(circle at 82% 78%, rgba(238, 242, 255, 0.5) 0%, transparent 55%),
+              linear-gradient(180deg, #f8fafc 0%, #f1f5f9 50%, #e2e8f0 100%) !important;
+}
+
+html[data-theme='light'] header {
+  background-color: rgba(248, 250, 252, 0.95) !important;
+  border-color: #e2e8f0 !important;
+}
+
+html[data-theme='light'] aside {
+  background-color: rgba(241, 245, 249, 0.98) !important;
+  border-color: #e2e8f0 !important;
+}
+
+@layer utilities {
+  /* Google Gemini / Firebase Dark Theme Ambient Background */
+  .bg-ambient-gradient {
+    background: radial-gradient(circle at 18% 18%, rgba(30, 41, 59, 0.4) 0%, transparent 45%),
+                radial-gradient(circle at 82% 82%, rgba(15, 23, 42, 0.5) 0%, transparent 50%),
+                radial-gradient(circle at 50% 30%, rgba(20, 27, 34, 0.3) 0%, transparent 55%),
+                linear-gradient(180deg, #0B1015 0%, #141B22 50%, #080C0F 100%);
+    background-size: 200% 200%;
+    animation: calmAmbientShift 22s ease-in-out infinite alternate;
+  }
+
+  /* Animated subtle geometric contour backdrop */
+  .bg-geometric-grid {
+    background-image: 
+      linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  /* Surface Panel styling */
+  .glass-panel {
+    background: rgba(20, 27, 34, 0.88);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .glass-panel-hover {
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .glass-panel-hover:hover {
+    background: rgba(27, 36, 46, 0.94);
+    border-color: rgba(30, 41, 59, 0.8);
+    box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.8);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.skeleton-shimmer {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.12) 50%, rgba(255, 255, 255, 0.04) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.8s infinite linear;
+}
+
+@keyframes calmAmbientShift {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 100%;
+  }
+}
+
+@keyframes contourPulse {
+  0%, 100% {
+    opacity: 0.18;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.35;
+    transform: scale(1.03);
+  }
+}
+
+.animate-contour-pulse {
+  animation: contourPulse 12s ease-in-out infinite;
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+::-webkit-scrollbar-thumb {
+  background: #222222;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #1e3a8a;
+}
+
+[dir='rtl'] {
+    text-align: justify;
+    text-justify: inter-word;
+    font-variant-ligatures: contextual;
+    font-feature-settings: "ss01" on;
+    letter-spacing: 0.02em;
+    line-height: 1.8;
+}
+
+[dir='rtl'] .icon-directional,
+[dir='rtl'] .back-arrow,
+[dir='rtl'] .progress-indicator {
+    transform: scaleX(-1);
+}
+
+[dir='rtl'] .container-fluid {
+    padding-inline: 16px;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    transition: padding-inline 0.3s ease-in-out;
+}
+
+/* Fluid type scale for Arabic */
+:root {
+  --fluid-min-width: 320;
+  --fluid-max-width: 1240;
+  --fluid-min-size: 16;
+  --fluid-max-size: 18;
+}
+
+[dir='rtl'] body {
+    font-size: clamp(
+        calc(var(--fluid-min-size) * 1px),
+        calc(var(--fluid-min-size) * 1px + (var(--fluid-max-size) - var(--fluid-min-size)) * (100vw - var(--fluid-min-width) * 1px) / (var(--fluid-max-width) - var(--fluid-min-width))),
+        calc(var(--fluid-max-size) * 1px)
+    );
+}

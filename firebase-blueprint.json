@@ -1,0 +1,70 @@
+{
+  "entities": {
+    "Course": {
+      "title": "Course",
+      "description": "An eLearning course created or imported from Google Classroom",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string", "maxLength": 200 },
+        "category": { "type": "string" },
+        "description": { "type": "string", "maxLength": 2000 },
+        "level": { "type": "string" },
+        "coverImage": { "type": "string" },
+        "author": { "type": "string" },
+        "authorId": { "type": "string" },
+        "classroomId": { "type": "string" },
+        "rating": { "type": "number" },
+        "durationHours": { "type": "number" },
+        "tags": { "type": "array" },
+        "isAiGenerated": { "type": "boolean" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["title", "category", "description", "level", "authorId"]
+    },
+    "UserProgress": {
+      "title": "UserProgress",
+      "description": "Tracks learner course progress, XP, completed lessons, and certificates",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "courseId": { "type": "string" },
+        "completedLessonIds": { "type": "array" },
+        "xp": { "type": "number" },
+        "adaptiveLevel": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["userId", "courseId", "completedLessonIds", "xp"]
+    },
+    "ClassroomCourse": {
+      "title": "ClassroomCourse",
+      "description": "Cached Google Classroom course metadata and synced status",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "section": { "type": "string" },
+        "descriptionHeading": { "type": "string" },
+        "ownerId": { "type": "string" },
+        "courseState": { "type": "string" },
+        "alternateLink": { "type": "string" },
+        "syncedAt": { "type": "string" }
+      },
+      "required": ["id", "name", "ownerId"]
+    }
+  },
+  "firestore": {
+    "/courses/{courseId}": {
+      "schema": "Course",
+      "description": "Collection of all academy courses, including Google Classroom imports"
+    },
+    "/users/{userId}/progress/{courseId}": {
+      "schema": "UserProgress",
+      "description": "Subcollection storing learner progress for specific courses"
+    },
+    "/users/{userId}/classroomCourses/{classroomId}": {
+      "schema": "ClassroomCourse",
+      "description": "User Google Classroom synced courses"
+    }
+  }
+}

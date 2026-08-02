@@ -1,0 +1,44 @@
+# FunctionGemma model overview
+
+[//]: # (source: [ai.google.dev](https://ai.google.dev/gemma/docs/functiongemma))
+
+**Gemma 4** released with text, audio and image input and long up to 256K context window! [**Learn more**](/gemma/docs/core)
+
+FunctionGemma is a specialized version of our Gemma 3 270M model tuned for
+function calling. It is designed as a strong base for further training into
+custom, fast, private, local agents that translate natural language into
+executable API actions.
+
+## When to choose FunctionGemma
+
+FunctionGemma is the bridge between natural language and software execution. It
+is the right tool if:
+
+* **You have a defined API surface:** Your application has a defined set of
+  actions (e.g., smart home, media, navigation).
+* **You are ready to fine-tune:** You need the consistent, deterministic
+  behavior that comes from fine-tuning on specific data, rather than the
+  variability of zero-shot prompting.
+* **You prioritize local-first deployment:** Your application requires
+  near-instant latency and total data privacy, running efficiently within the
+  compute and battery limits of edge devices.
+* **You are building compound systems:** You need a lightweight edge model to
+  handle local actions, allowing your system to process common commands
+  on-device and only query larger models (like Gemma 3 27B) for more complex
+  tasks.
+
+[Get it on Hugging Face](https://huggingface.co/google/functiongemma-270m-it)
+[Get it on Kaggle](https://www.kaggle.com/models/google/functiongemma)
+[Access it on Vertex](https://console.cloud.google.com/vertex-ai/publishers/google/model-garden/functiongemma)
+
+As with other Gemma models, FunctionGemma is provided with open weights and
+licensed for responsible [commercial use](/gemma/terms), allowing you to
+fine tune and deploy it in your own projects and applications.
+
+[Formatting and best practices](/gemma/docs/functiongemma/formatting-and-best-practices)
+[Try FunctionGemma](/gemma/docs/functiongemma/function-calling-with-hf)
+
+[Fine-tune FunctionGemma](/gemma/docs/functiongemma/finetuning-with-functiongemma)
+[Fine-tune the Mobile Actions demo](/gemma/docs/mobile-actions)
+
+Send feedback

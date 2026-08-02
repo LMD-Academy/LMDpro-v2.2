@@ -1,0 +1,10 @@
+{
+  "name": "LMDpro",
+  "description": "Autonomous AI-powered eLearning platform featuring adaptive learning paths, real-time AI tutoring, multi-role dashboards, automated certification, audio narration, and multi-language support.",
+  "requestFramePermissions": [
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

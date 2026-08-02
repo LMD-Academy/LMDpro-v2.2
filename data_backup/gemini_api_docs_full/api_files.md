@@ -1,0 +1,300 @@
+--- source: https://ai.google.dev/api/files ---
+
+The [Interactions API](/gemini-api/docs/interactions-overview) is now generally available. We recommend using this API for access to all the latest features and models.
+
+* [Home](https://ai.google.dev/)
+* [Gemini API](https://ai.google.dev/gemini-api)
+* [API reference](https://ai.google.dev/api)
+
+Send feedback
+
+# Using files
+
+
+
+The Gemini API supports uploading media files separately from the prompt input, allowing your media to be reused across multiple requests and multiple prompts. For more details, check out the [Prompting with media](https://ai.google.dev/gemini-api/docs/prompting_with_media) guide.
+
+## REST Resource: files
+
+
+
+
+* [Resource: File](#File)
+  + [JSON representation](#File.SCHEMA_REPRESENTATION)
+* [VideoFileMetadata](#VideoFileMetadata)
+  + [JSON representation](#VideoFileMetadata.SCHEMA_REPRESENTATION)
+* [State](#State)
+* [Source](#Source)
+* [Methods](#METHODS_SUMMARY)
+
+## Resource: File
+
+A file uploaded to the API. Next ID: 15
+
+| Fields | |
+| --- | --- |
+
+`name` |
+
+`string`
+
+Immutable. Identifier. The `File` resource name. The ID (name excluding the "files/" prefix) can contain up to 40 characters that are lowercase alphanumeric or dashes (-). The ID cannot start or end with a dash. If the name is empty on create, a unique name will be generated. Example: `files/123-456`
+
+`displayName` |
+
+`string`
+
+Optional. The human-readable display name for the `File`. The display name must be no more than 512 characters in length, including spaces. Example: "Welcome Image"
+
+`mimeType` |
+
+`string`
+
+Output only. MIME type of the file.
+
+`sizeBytes` |
+
+`string (int64 format)`
+
+Output only. Size of the file in bytes.
+
+`createTime` |
+
+`string (Timestamp format)`
+
+Output only. The timestamp of when the `File` was created.
+
+Uses RFC 3339, where generated output will always be Z-normalized and use 0, 3, 6 or 9 fractional digits. Offsets other than "Z" are also accepted. Examples: `"2014-10-02T15:01:23Z"`, `"2014-10-02T15:01:23.045123456Z"` or `"2014-10-02T15:01:23+05:30"`.
+
+`updateTime` |
+
+`string (Timestamp format)`
+
+Output only. The timestamp of when the `File` was last updated.
+
+Uses RFC 3339, where generated output will always be Z-normalized and use 0, 3, 6 or 9 fractional digits. Offsets other than "Z" are also accepted. Examples: `"2014-10-02T15:01:23Z"`, `"2014-10-02T15:01:23.045123456Z"` or `"2014-10-02T15:01:23+05:30"`.
+
+`expirationTime` |
+
+`string (Timestamp format)`
+
+Output only. The timestamp of when the `File` will be deleted. Only set if the `File` is scheduled to expire.
+
+Uses RFC 3339, where generated output will always be Z-normalized and use 0, 3, 6 or 9 fractional digits. Offsets other than "Z" are also accepted. Examples: `"2014-10-02T15:01:23Z"`, `"2014-10-02T15:01:23.045123456Z"` or `"2014-10-02T15:01:23+05:30"`.
+
+`sha256Hash` |
+
+`string (bytes format)`
+
+Output only. SHA-256 hash of the uploaded bytes.
+
+A base64-encoded string.
+
+`uri` |
+
+`string`
+
+Output only. The uri of the `File`.
+
+`downloadUri` |
+
+`string`
+
+Output only. The download uri of the `File`.
+
+`state` |
+
+`enum (State)`
+
+Output only. Processing state of the File.
+
+`source` |
+
+`enum (Source)`
+
+Source of the File.
+
+`error` |
+
+`object (google.rpc.Status)`
+
+Output only. Error status if File processing failed.
+
+|  |
+| --- |
+| `metadata` |
+
+`Union type`
+
+Metadata for the File. `metadata` can be only one of the following:
+
+`videoMetadata` |
+
+`object (VideoFileMetadata)`
+
+Output only. Metadata for a video.
+
+| JSON representation |
+| --- |
+| ``` {   "name": string,   "displayName": string,   "mimeType": string,   "sizeBytes": string,   "createTime": string,   "updateTime": string,   "expirationTime": string,   "sha256Hash": string,   "uri": string,   "downloadUri": string,   "state": enum (State),   "source": enum (Source),   "error": {     object (google.rpc.Status)   },    // metadata   "videoMetadata": {     object (VideoFileMetadata)   }   // Union type } ``` |
+
+## VideoFileMetadata
+
+Metadata for a video `File`.
+
+| Fields | |
+| --- | --- |
+
+`videoDuration` |
+
+`string (Duration format)`
+
+Duration of the video.
+
+A duration in seconds with up to nine fractional digits, ending with '`s`'. Example: `"3.5s"`.
+
+| JSON representation |
+| --- |
+| ``` {   "videoDuration": string } ``` |
+
+## State
+
+States for the lifecycle of a File.
+
+| Enums | |
+| --- | --- |
+| `STATE_UNSPECIFIED` | The default value. This value is used if the state is omitted. |
+| `PROCESSING` | File is being processed and cannot be used for inference yet. |
+| `ACTIVE` | File is processed and available for inference. |
+| `FAILED` | File failed processing. |
+
+## Source
+
+| Enums | |
+| --- | --- |
+| `SOURCE_UNSPECIFIED` | Used if source is not specified. |
+| `UPLOADED` | Indicates the file is uploaded by the user. |
+| `GENERATED` | Indicates the file is generated by Google. |
+| `REGISTERED` | Indicates the file is a registered, i.e. a Google Cloud Storage file. |
+
+## Method: files.get
+
+
+
+
+* [Endpoint](#body.HTTP_TEMPLATE)
+* [Path parameters](#body.PATH_PARAMETERS)
+* [Request body](#body.request_body)
+* [Response body](#body.response_body)
+* [Authorization scopes](#body.aspect)
+* [Example request](#body.codeSnippets)
+  + [Basic](#body.codeSnippets.group)
+
+Gets the metadata for the given `File`.
+
+### Endpoint
+
+get
+
+`https://generativelanguage.googleapis.com/v1beta/{name=files/*}`
+
+### Path parameters
+
+`name` |
+
+`string`
+
+Required. The name of the `File` to get. Example: `files/abc-123` It takes the form `files/{file}`.
+
+### Request body
+
+The request body must be empty.
+
+### Example request
+
+### Python
+
+```
+from google import genai
+
+client = genai.Client()
+myfile = client.files.upload(file=media / "poem.txt")
+file_name = myfile.name
+print(file_name)  # "files/*"
+
+myfile = client.files.get(name=file_name)
+print(myfile)
+
+files.py
+```
+
+### Node.js
+
+```
+// Make sure to include the following import:
+// import {GoogleGenAI} from '@google/genai';
+const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+const myfile = await ai.files.upload({
+  file: path.join(media, "poem.txt"),
+});
+const fileName = myfile.name;
+console.log(fileName);
+
+const fetchedFile = await ai.files.get({ name: fileName });
+console.log(fetchedFile);
+
+files.js
+```
+
+### Go
+
+```
+ctx := context.Background()
+client, err := genai.NewClient(ctx, &genai.ClientConfig{
+	APIKey:  os.Getenv("GEMINI_API_KEY"),
+	Backend: genai.BackendGeminiAPI,
+})
+if err != nil {
+	log.Fatal(err)
+}
+myfile, err := client.Files.UploadFromPath(
+	ctx,
+	filepath.Join(getMedia(), "poem.txt"), 
+	&genai.UploadFileConfig{
+		MIMEType: "text/plain",
+	},
+)
+if err != nil {
+	log.Fatal(err)
+}
+fileName := myfile.Name
+fmt.Println(fileName)
+file, err := client.Files.Get(ctx, fileName, nil)
+if err != nil {
+	log.Fatal(err)
+}
+fmt.Println(file)
+
+files.go
+```
+
+### Shell
+
+```
+name=$(jq ".file.name" file_info.json)
+# Get the file of interest to check state
+curl https://generativelanguage.googleapis.com/v1beta/files/$name > file_info.json
+# Print some information about the file you got
+name=$(jq ".file.name" file_info.json)
+echo name=$name
+file_uri=$(jq ".file.uri" file_info.json)
+echo file_uri=$file_uri
+
+files
+
+.sh
+```
+
+### Response body
+
+If successful, the response body contains an instance of `File`.

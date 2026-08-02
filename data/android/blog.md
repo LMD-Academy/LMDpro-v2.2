@@ -1,0 +1,252 @@
+# The Android Developers' Blog
+
+[//]: # (source: [developer.android.com](https://developer.android.com/blog))
+
+Tools and resources to help you build faster and easier.
+
+![Google For Developers Android Text Strapi 2000X1000 2D4221D884 Ztw7Eg Image](/static/blog/assets/Google_For_Developers_Android_Text_Strapi_2000x1000_2d4221d884_ZtW7eg.webp)
+
+19
+
+May
+2026
+
+19
+
+May
+2026
+
+[![View Matthew McCullough's profile](/static/blog/assets/matthew_mccullough_dc22050a18_Z1Fsr5h.webp)](/blog/authors/matthew-mccullough)
+
+#### [Product News](/blog/categories/product-news)
+
+## [17 Things to know for Android developers at Google I/O!](/blog/posts/17-things-to-know-for-android-developers-at-google-i-o)
+
+[arrow\_forward](/blog/posts/17-things-to-know-for-android-developers-at-google-i-o)
+
+Google I/O '26 features 17 key announcements for Android developers focusing on agent-led productivity, Compose First as our UI standard, and high-performance media and adaptive development for the expanding ecosystem.
+
+###### [Matthew McCullough](/blog/authors/matthew-mccullough) • 8 min read
+
+* [#Google I/O](/blog/topics/google-i-o)
+
+## The Latest
+
+* [![View Jonathan Starup's profile](/static/blog/assets/unnamed_10_16ef5ad5c7_Z1s2HD7.webp)](/blog/authors/jonathan-starup)[![View Andrei Shikov's profile](/static/blog/assets/unnamed_9_1eaaffc6a9_EPI3Y.webp)](/blog/authors/andrei-shikov)
+
+  27
+
+  Jul
+  2026
+
+  27
+
+  Jul
+  2026
+
+  ![0707 Faster Kotlin Coroutines On Android With R8 Strapi 5B162A2623 Zm78F7 Image](/static/blog/assets/0707_Faster_Kotlin_coroutines_on_Android_with_R8_Strapi_5b162a2623_ZM78f7.webp)
+
+  [Case Studies](/blog/categories/case-studies)
+
+  ## [How R8 made Kotlin Coroutines on Android 2x faster](/blog/posts/how-r8-made-kotlin-coroutines-on-android-2x-faster)
+
+  With the majority of Android apps adopting Kotlin as their main language of choice, kotlinx.coroutines has become a de-facto standard for asynchronous programming. The library offers a well-designed and structured way of managing concurrent flows that is native to Kotlin.
+
+  [Jonathan Starup](/blog/authors/jonathan-starup),
+  [Andrei Shikov](/blog/authors/andrei-shikov)
+  •
+  7 min read
+  + [#Compose](/blog/topics/compose)
+  + [#R8](/blog/topics/r8)
+  + [#coroutines](/blog/topics/coroutines)
+  + +1
+    ↩
+* [![View Fahd Imtiaz's profile](/static/blog/assets/Fahd_Imtiaz_259fcb7c47_Z15U8cx.webp)](/blog/authors/fahd-imtiaz)[![View Miguel Montemayor's profile](/static/blog/assets/miguel_montemayor_552207c1c6_Z1tItyG.webp)](/blog/authors/miguel-montemayor)
+
+  23
+
+  Jul
+  2026
+
+  23
+
+  Jul
+  2026
+
+  ![Mm Adaptive And Device Meta 18E67Bafd8 Z1Bkgnt Image](/static/blog/assets/MM_Adaptive_and_device_Meta_18e67bafd8_Z1BKgnT.webp)
+
+  ## [Optimize your apps for the next generation of Samsung Galaxy devices](/blog/posts/optimize-your-apps-for-the-next-generation-of-samsung-galaxy-devices)
+
+  Today at Galaxy Unpacked, Samsung unveiled its latest lineup of foldable and wearable devices. For developers, this means that the variety of form factors, screen sizes, and device postures your app needs to support is expanding once again.
+
+  [Fahd Imtiaz](/blog/authors/fahd-imtiaz),
+  [Miguel Montemayor](/blog/authors/miguel-montemayor)
+  •
+  3 min read
+* [![View Caren Chang's profile](/static/blog/assets/Caren_Chang_e58d793559_1i40VV.webp)](/blog/authors/caren-chang)
+
+  22
+
+  Jul
+  2026
+
+  22
+
+  Jul
+  2026
+
+  ![0625 Building Jet Packer With Intelligent On Device Features Strapi V02 3F5A8B17B0 1Urfxh Image](/static/blog/assets/0625_Building_Jet_Packer_with_Intelligent_On_Device_features_Strapi_v02_3f5a8b17b0_1UrFxh.webp)
+
+  [How-tos](/blog/categories/how-tos)
+
+  ## [Build intelligent Android apps: On-device inference](/blog/posts/build-intelligent-android-apps-on-device-inference)
+
+  Welcome back to the blog post series "Build intelligent Android apps" where we take a basic Android app and transform it into a personalized, intelligent, and agentic experience. In our previous post we introduced Jetpacker, the demo app we'll use throughout this series.
+
+  [Caren Chang](/blog/authors/caren-chang)
+  •
+  6 min read
+  + [#Intelligent Apps](/blog/topics/intelligent-apps)
+* 3
+  Authors
+
+  22
+
+  Jul
+  2026
+
+  22
+
+  Jul
+  2026
+
+  ![Features In Jetpacker Features With Firebase Ai Logic Strapi 0A6Fbb7Edb 21Agrw Image](/static/blog/assets/features_in_Jetpacker_Features_with_Firebase_AI_Logic_Strapi_0a6fbb7edb_21AGRW.webp)
+
+  [How-tos](/blog/categories/how-tos)
+
+  ## [Build intelligent Android apps: Cloud and hybrid inference](/blog/posts/build-intelligent-android-apps-cloud-and-hybrid-inference)
+
+  Welcome back to the blog post series "Build intelligent Android apps" where we take a basic Android app and transform it into a personalized, intelligent, and agentic experience.
+
+  [Thomas Ezan](/blog/authors/thomas-ezan),
+  [Jolanda Verhoef](/blog/authors/jolanda-verhoef),
+  [Caren Chang](/blog/authors/caren-chang)
+  •
+  8 min read
+  + [#Intelligent Apps](/blog/topics/intelligent-apps)
+* [![View Jolanda Verhoef's profile](/static/blog/assets/jolanda_b0e2beee3e_Z1KU2ms.webp)](/blog/authors/jolanda-verhoef)
+
+  22
+
+  Jul
+  2026
+
+  22
+
+  Jul
+  2026
+
+  ![0713 Jetpacker Strapi D07D6F2D4B Z1Tb3He Image](/static/blog/assets/0713_Jetpacker_Strapi_d07d6f2d4b_Z1tB3HE.webp)
+
+  [How-tos](/blog/categories/how-tos)
+
+  ## [Build intelligent Android apps: Introduction to Jetpacker](/blog/posts/build-intelligent-android-apps-introduction-to-jetpacker)
+
+  Jetpacker is a technical showcase app that our team built from the ground up for this year's Google I/O (built using Antigravity). At its core, Jetpacker helps users plan, explore, and enjoy their next big adventure.
+
+  [Jolanda Verhoef](/blog/authors/jolanda-verhoef)
+  •
+  4 min read
+  + [#Intelligent Apps](/blog/topics/intelligent-apps)
+* [![View Ben Weiss's profile](/static/blog/assets/1_1_U4_K_Lr4r_A_Kx_Pq0_Crp_L3vr_Q_a4d1920594_2dcD9g.webp)](/blog/authors/ben-weiss)
+
+  22
+
+  Jul
+  2026
+
+  22
+
+  Jul
+  2026
+
+  ![Afd Abl 104 Jet Packer App Functions Strapi 6B8D975401 Zbom76 Image](/static/blog/assets/AFD_ABL_104_Jet_Packer_App_Functions_Strapi_6b8d975401_ZbOM76.webp)
+
+  [How-tos](/blog/categories/how-tos)
+
+  ## [Build intelligent Android apps: Integrate into Android's intelligence system using AppFunctions](/blog/posts/build-intelligent-android-apps-integrate-into-android-s-intelligence-system-using-app-functions)
+
+  Welcome back to the blog post series "Build intelligent Android apps" where we take a basic Android app and transform it into a personalized, intelligent, and agentic experience. In our previous post, we explored how to leverage Firebase AI Logic to build cloud-hosted and hybrid AI features.
+
+  [Ben Weiss](/blog/authors/ben-weiss)
+  •
+  6 min read
+  + [#Intelligent Apps](/blog/topics/intelligent-apps)
+
+[arrow\_forward
+See all latest posts](/blog/latest)
+
+![Product News Droid 599A11Ad69 D4Ee764Ece Z1Epvf1 Image](/static/blog/assets/product_news_droid_599a11ad69_d4ee764ece_Z1EpVf1.webp)
+
+# Product News
+
+* 15
+
+  Dec
+  2025
+
+  ## [18% Faster Compiles, 0% Compromises](/blog/posts/faster-compiles)
+
+  The Android Runtime (ART) team has reduced compile time by 18% without compromising the compiled code or any peak memory regressions. This improvement was part of our 2025 initiative to improve compile time without sacrificing memory usage or the quality of the compiled code.
+
+  ###### [Santiago Aboy Solanes](/blog/authors/santiago-solanes), [Vladimír Marko](/blog/authors/vladimir-marko) • 8 min read
+* 29
+
+  Jan
+  2026
+
+  ## [Accelerating your insights with faster, smarter monetization data and recommendations](/blog/posts/accelerating-your-insights-with-faster-smarter-monetization-data-and-recommendations)
+
+  Today, we’re announcing a suite of upgrades to the Google Play Console and beyond, giving you greater visibility into your financial performance and specific, data-backed steps to improve it.
+
+  ###### [Phalene Gowling](/blog/authors/phalene-gowling) • 2 min read
+* 02
+
+  Dec
+  2025
+
+  ## [Android 16 QPR2 is Released](/blog/posts/android-16-qpr-2-is-released)
+
+  Android 16 QPR2 is now released and available in AOSP
+
+  ###### [Matthew McCullough](/blog/authors/matthew-mccullough) • 4 min read
+
+[arrow\_forward
+More](/blog/categories/product-news)
+
+[arrow\_forward
+More](/blog/categories/product-news)
+
+[Highlighted Author
+
+# Niharika Arora
+
+## 5
+
+Posts
+
+![View Niharika Arora's profile](/static/blog/assets/niharika_2910f6d612_C99s1.webp)
+
+arrow\_forward
+
+###### Developer Relations Engineer](/blog/authors/niharika-arora)
+
+Stay in the loop
+
+Get the latest Android development insights delivered to your inbox
+weekly.
+
+[mail
+Subscribe](/subscribe)
+
+![A 3D illustration of the Android mascot, wearing a jetpack that's emitting a large cloud of bubbles](/static/blog/assets/rocket-android.CVJQZOf1_1PnraM.webp)

@@ -1,0 +1,187 @@
+# ContextThemeWrapper
+
+[//]: # (source: [developer.android.com](https://developer.android.com/reference/androidx/appcompat/view/ContextThemeWrapper))
+
+Artifact: [androidx.appcompat:appcompat](/jetpack/androidx/releases/appcompat)
+
+[View Source](https://cs.android.com/search?q=file:androidx/appcompat/view/ContextThemeWrapper.java+class:androidx.appcompat.view.ContextThemeWrapper)
+
+Added in [1.1.0](/jetpack/androidx/releases/appcompat#1.1.0)
+
+---
+
+[Kotlin](/reference/kotlin/androidx/appcompat/view/ContextThemeWrapper "View this page in Kotlin")
+|Java
+
+```
+public class ContextThemeWrapper extends ContextWrapper
+```
+
+|  |  |  |  |
+| --- | --- | --- | --- |
+| [java.lang.Object](https://developer.android.com/reference/java/lang/Object.html) | | | |
+| ↳ | [android.content.Context](https://developer.android.com/reference/android/content/Context.html) | | |
+|  | ↳ | [android.content.ContextWrapper](https://developer.android.com/reference/android/content/ContextWrapper.html) | |
+|  |  | ↳ | [androidx.appcompat.view.ContextThemeWrapper](/reference/androidx/appcompat/view/ContextThemeWrapper) |
+
+---
+
+A context wrapper that allows you to modify or replace the theme of the wrapped context.
+
+## Summary
+
+| Public constructors |
+| --- |
+| `ContextThemeWrapper()`  Creates a new context wrapper with no theme and no base context. |
+| `ContextThemeWrapper(Context base, @StyleRes int themeResId)`  Creates a new context wrapper with the specified theme. |
+| `ContextThemeWrapper(Context base, Resources.Theme theme)`  Creates a new context wrapper with the specified theme. |
+
+| Public methods |
+| --- |
+| `void` | `applyOverrideConfiguration(Configuration overrideConfiguration)`  Call to set an "override configuration" on this context -- this is a configuration that replies one or more values of the standard configuration that is applied to the context. |
+| `AssetManager` | `getAssets()` |
+| `Resources` | `getResources()` |
+| `Object` | `getSystemService(String name)` |
+| `Resources.Theme` | `getTheme()` |
+| `int` | `getThemeResId()`  Returns the resource ID of the theme that is to be applied on top of the base context's theme. |
+| `void` | `setTheme(int resid)` |
+
+| Protected methods |
+| --- |
+| `void` | `attachBaseContext(Context newBase)` |
+| `void` | `onApplyThemeResource(Resources.Theme theme, int resid, boolean first)`  Called by setTheme and getTheme to apply a theme resource to the current Theme object. |
+
+| Inherited Constants |
+| --- |
+| From [android.content.Context](https://developer.android.com/reference/android/content/Context.html) |  |  | | --- | --- | | `static final String` | `ACCESSIBILITY_SERVICE = "accessibility"` | | `static final String` | `ACCOUNT_SERVICE = "account"` | | `static final String` | `ACTIVITY_SERVICE = "activity"` | | `static final String` | `ADVANCED_PROTECTION_SERVICE = "advanced_protection"` | | `static final String` | `ALARM_SERVICE = "alarm"` | | `static final String` | `APPWIDGET_SERVICE = "appwidget"` | | `static final String` | `APP_FUNCTION_SERVICE = "app_function"` | | `static final String` | `APP_OPS_SERVICE = "appops"` | | `static final String` | `APP_SEARCH_SERVICE = "app_search"` | | `static final String` | `AUDIO_SERVICE = "audio"` | | `static final String` | `AUTOFILL_SERVICE = "autofill"` | | `static final String` | `BATTERY_SERVICE = "batterymanager"` | | `static final int` | `BIND_ABOVE_CLIENT = 8` | | `static final int` | `BIND_ADJUST_WITH_ACTIVITY = 128` | | `static final int` | `BIND_ALLOW_ACTIVITY_STARTS = 512` | | `static final int` | `BIND_ALLOW_OOM_MANAGEMENT = 16` | | `static final int` | `BIND_AUTO_CREATE = 1` | | `static final int` | `BIND_DEBUG_UNBIND = 2` | | `static final int` | `BIND_EXTERNAL_SERVICE = -2147483648` | | `static final long` | `BIND_EXTERNAL_SERVICE_LONG = 4611686018427387904` | | `static final int` | `BIND_IMPORTANT = 64` | | `static final int` | `BIND_INCLUDE_CAPABILITIES = 4096` | | `static final int` | `BIND_NOT_FOREGROUND = 4` | | `static final int` | `BIND_NOT_PERCEPTIBLE = 256` | | `static final int` | `BIND_PACKAGE_ISOLATED_PROCESS = 16384` | | `static final int` | `BIND_SHARED_ISOLATED_PROCESS = 8192` | | `static final int` | `BIND_WAIVE_PRIORITY = 32` | | `static final String` | `BIOMETRIC_SERVICE = "biometric"` | | `static final String` | `BLOB_STORE_SERVICE = "blob_store"` | | `static final String` | `BLUETOOTH_SERVICE = "bluetooth"` | | `static final String` | `BUGREPORT_SERVICE = "bugreport"` | | `static final String` | `CAMERA_SERVICE = "camera"` | | `static final String` | `CAPTIONING_SERVICE = "captioning"` | | `static final String` | `CARRIER_CONFIG_SERVICE = "carrier_config"` | | `static final String` | `CHOOSER_SERVICE = "chooser"` | | `static final String` | `CLIPBOARD_SERVICE = "clipboard"` | | `static final String` | `COMPANION_DEVICE_SERVICE = "companiondevice"` | | `static final String` | `CONNECTIVITY_DIAGNOSTICS_SERVICE = "connectivity_diagnostics"` | | `static final String` | `CONNECTIVITY_SERVICE = "connectivity"` | | `static final String` | `CONSUMER_IR_SERVICE = "consumer_ir"` | | `static final String` | `CONTACT_KEYS_SERVICE = "contact_keys"` | | `static final int` | `CONTEXT_IGNORE_SECURITY = 2` | | `static final int` | `CONTEXT_INCLUDE_CODE = 1` | | `static final int` | `CONTEXT_RESTRICTED = 4` | | `static final String` | `CREDENTIAL_SERVICE = "credential"` | | `static final String` | `CROSS_PROFILE_APPS_SERVICE = "crossprofileapps"` | | `static final int` | `DEVICE_ID_DEFAULT = 0` | | `static final int` | `DEVICE_ID_INVALID = -1` | | `static final String` | `DEVICE_LOCK_SERVICE = "device_lock"` | | `static final String` | `DEVICE_POLICY_SERVICE = "device_policy"` | | `static final String` | `DISPLAY_HASH_SERVICE = "display_hash"` | | `static final String` | `DISPLAY_SERVICE = "display"` | | `static final String` | `DOMAIN_VERIFICATION_SERVICE = "domain_verification"` | | `static final String` | `DOWNLOAD_SERVICE = "download"` | | `static final String` | `DROPBOX_SERVICE = "dropbox"` | | `static final String` | `EUICC_SERVICE = "euicc"` | | `static final String` | `FILE_INTEGRITY_SERVICE = "file_integrity"` | | `static final String` | `FILE_SERVICE = "file"` | | `static final String` | `GAME_SERVICE = "game"` | | `static final String` | `GRAMMATICAL_INFLECTION_SERVICE = "grammatical_inflection"` | | `static final String` | `HARDWARE_PROPERTIES_SERVICE = "hardware_properties"` | | `static final String` | `HEALTHCONNECT_SERVICE = "healthconnect"` | | `static final String` | `INPUT_METHOD_SERVICE = "input_method"` | | `static final String` | `INPUT_SERVICE = "input"` | | `static final String` | `IPSEC_SERVICE = "ipsec"` | | `static final String` | `JOB_SCHEDULER_SERVICE = "jobscheduler"` | | `static final String` | `KEYGUARD_SERVICE = "keyguard"` | | `static final String` | `KEYSTORE_SERVICE = "keystore"` | | `static final String` | `LAUNCHER_APPS_SERVICE = "launcherapps"` | | `static final String` | `LAYOUT_INFLATER_SERVICE = "layout_inflater"` | | `static final String` | `LOCALE_SERVICE = "locale"` | | `static final String` | `LOCATION_SERVICE = "location"` | | `static final String` | `MEDIA_COMMUNICATION_SERVICE = "media_communication"` | | `static final String` | `MEDIA_METRICS_SERVICE = "media_metrics"` | | `static final String` | `MEDIA_PROJECTION_SERVICE = "media_projection"` | | `static final String` | `MEDIA_QUALITY_SERVICE = "media_quality"` | | `static final String` | `MEDIA_ROUTER_SERVICE = "media_router"` | | `static final String` | `MEDIA_SESSION_SERVICE = "media_session"` | | `static final String` | `MIDI_SERVICE = "midi"` | | `static final int` | `MODE_APPEND = 32768` | | `static final int` | `MODE_ENABLE_WRITE_AHEAD_LOGGING = 8` | | `static final int` | `MODE_MULTI_PROCESS = 4`  **This field is deprecated.** | | `static final int` | `MODE_NO_LOCALIZED_COLLATORS = 16` | | `static final int` | `MODE_PRIVATE = 0` | | `static final int` | `MODE_WORLD_READABLE = 1`  **This field is deprecated.** | | `static final int` | `MODE_WORLD_WRITEABLE = 2`  **This field is deprecated.** | | `static final String` | `NETWORK_STATS_SERVICE = "netstats"` | | `static final String` | `NFC_SERVICE = "nfc"` | | `static final String` | `NOTIFICATION_SERVICE = "notification"` | | `static final String` | `NPU_SERVICE = "npu"` | | `static final String` | `NSD_SERVICE = "servicediscovery"` | | `static final String` | `OVERLAY_SERVICE = "overlay"` | | `static final String` | `PCC_SANDBOX_SERVICE = "pcc_sandbox"` | | `static final String` | `PEOPLE_SERVICE = "people"` | | `static final String` | `PERFORMANCE_HINT_SERVICE = "performance_hint"` | | `static final String` | `PERSISTENT_DATA_BLOCK_SERVICE = "persistent_data_block"` | | `static final String` | `POWER_SERVICE = "power"` | | `static final String` | `PRINT_SERVICE = "print"` | | `static final String` | `PROFILING_SERVICE = "profiling"` | | `static final int` | `RECEIVER_EXPORTED = 2` | | `static final int` | `RECEIVER_NOT_EXPORTED = 4` | | `static final int` | `RECEIVER_VISIBLE_TO_INSTANT_APPS = 1` | | `static final String` | `RESTRICTIONS_SERVICE = "restrictions"` | | `static final String` | `ROLE_SERVICE = "role"` | | `static final String` | `SATELLITE_SERVICE = "satellite"` | | `static final String` | `SEARCH_SERVICE = "search"` | | `static final String` | `SECURITY_STATE_SERVICE = "security_state"` | | `static final String` | `SENSOR_SERVICE = "sensor"` | | `static final String` | `SERIAL_SERVICE = "serial"` | | `static final String` | `SHORTCUT_SERVICE = "shortcut"` | | `static final String` | `STATUS_BAR_SERVICE = "statusbar"` | | `static final String` | `STORAGE_SERVICE = "storage"` | | `static final String` | `STORAGE_STATS_SERVICE = "storagestats"` | | `static final String` | `SYSTEM_HEALTH_SERVICE = "systemhealth"` | | `static final String` | `TELECOM_SERVICE = "telecom"` | | `static final String` | `TELEPHONY_IMS_SERVICE = "telephony_ims"` | | `static final String` | `TELEPHONY_PHONE_NUMBER_SERVICE = "telephony_phone_number"` | | `static final String` | `TELEPHONY_SERVICE = "phone"` | | `static final String` | `TELEPHONY_SUBSCRIPTION_SERVICE = "telephony_subscription_service"` | | `static final String` | `TETHERING_SERVICE = "tethering"` | | `static final String` | `TEXT_CLASSIFICATION_SERVICE = "textclassification"` | | `static final String` | `TEXT_SERVICES_MANAGER_SERVICE = "textservices"` | | `static final String` | `TV_AD_SERVICE = "tv_ad"` | | `static final String` | `TV_INPUT_SERVICE = "tv_input"` | | `static final String` | `TV_INTERACTIVE_APP_SERVICE = "tv_interactive_app"` | | `static final String` | `UI_MODE_SERVICE = "uimode"` | | `static final String` | `USAGE_STATS_SERVICE = "usagestats"` | | `static final String` | `USB_SERVICE = "usb"` | | `static final String` | `USER_SERVICE = "user"` | | `static final String` | `VIBRATOR_MANAGER_SERVICE = "vibrator_manager"` | | `static final String` | `VIBRATOR_SERVICE = "vibrator"`  **This field is deprecated.** | | `static final String` | `VIRTUAL_DEVICE_SERVICE = "virtualdevice"` | | `static final String` | `VPN_MANAGEMENT_SERVICE = "vpn_management"` | | `static final String` | `WALLPAPER_SERVICE = "wallpaper"` | | `static final String` | `WEB_APP_SERVICE = "web_app"` | | `static final String` | `WIFI_AWARE_SERVICE = "wifiaware"` | | `static final String` | `WIFI_P2P_SERVICE = "wifip2p"` | | `static final String` | `WIFI_RTT_RANGING_SERVICE = "wifirtt"` | | `static final String` | `WIFI_SERVICE = "wifi"` | | `static final String` | `WINDOW_SERVICE = "window"` | |
+
+| Inherited methods |
+| --- |
+| From [android.content.Context](https://developer.android.com/reference/android/content/Context.html) |  |  | | --- | --- | | `final int` | `getColor(int id)` | | `final ColorStateList` | `getColorStateList(int id)` | | `final Drawable` | `getDrawable(int id)` | | `final String` | `getString(int resId)` | | `final T` | `<T> getSystemService(Class<T> serviceClass)` | | `final CharSequence` | `getText(int resId)` | | `Context.BindServiceFlags` | `getUpdateableFlags()` | | `final TypedArray` | `obtainStyledAttributes(AttributeSet set, int[] attrs)` | | `void` | `revokeSelfPermissionOnKill(String permName)` | | `void` | `sendBroadcastWithMultiplePermissions(     Intent intent,     String[] receiverPermissions )` | |
+| From [android.content.ContextWrapper](https://developer.android.com/reference/android/content/ContextWrapper.html) |  |  | | --- | --- | | `boolean` | `bindIsolatedService(     Intent service,     int flags,     String instanceName,     Executor executor,     ServiceConnection conn )` | | `boolean` | `bindService(     Intent service,     Context.BindServiceFlags flags,     Executor executor,     ServiceConnection conn )` | | `boolean` | `bindServiceAsUser(     Intent service,     ServiceConnection conn,     Context.BindServiceFlags flags,     UserHandle user )` | | `int` | `checkCallingOrSelfPermission(String permission)` | | `int` | `checkCallingOrSelfUriPermission(Uri uri, int modeFlags)` | | `int[]` | `checkCallingOrSelfUriPermissions(List<Uri> uris, int modeFlags)` | | `int` | `checkCallingPermission(String permission)` | | `int` | `checkCallingUriPermission(Uri uri, int modeFlags)` | | `int[]` | `checkCallingUriPermissions(List<Uri> uris, int modeFlags)` | | `int` | `checkContentUriPermissionFull(Uri uri, int pid, int uid, int modeFlags)` | | `int` | `checkPermission(String permission, int pid, int uid)` | | `int` | `checkSelfPermission(String permission)` | | `int` | `checkUriPermission(Uri uri, int pid, int uid, int modeFlags)` | | `int[]` | `checkUriPermissions(List<Uri> uris, int pid, int uid, int modeFlags)` | | `void` | `clearWallpaper()`  **This method is deprecated.** | | `Context` | `createAttributionContext(String attributionTag)` | | `Context` | `createConfigurationContext(Configuration overrideConfiguration)` | | `Context` | `createContext(ContextParams contextParams)` | | `Context` | `createContextForSplit(String splitName)` | | `Context` | `createDeviceContext(int deviceId)` | | `Context` | `createDeviceProtectedStorageContext()` | | `Context` | `createDisplayContext(Display display)` | | `Context` | `createPackageContext(String packageName, int flags)` | | `Context` | `createWindowContext(Display display, int type, Bundle options)` | | `String[]` | `databaseList()` | | `boolean` | `deleteDatabase(String name)` | | `boolean` | `deleteFile(String name)` | | `boolean` | `deleteSharedPreferences(String name)` | | `void` | `enforceCallingOrSelfPermission(String permission, String message)` | | `void` | `enforceCallingOrSelfUriPermission(     Uri uri,     int modeFlags,     String message )` | | `void` | `enforceCallingPermission(String permission, String message)` | | `void` | `enforceCallingUriPermission(Uri uri, int modeFlags, String message)` | | `void` | `enforcePermission(String permission, int pid, int uid, String message)` | | `void` | `enforceUriPermission(     Uri uri,     int pid,     int uid,     int modeFlags,     String message )` | | `String[]` | `fileList()` | | `Context` | `getApplicationContext()` | | `ApplicationInfo` | `getApplicationInfo()` | | `AttributionSource` | `getAttributionSource()` | | `String` | `getAttributionTag()` | | `Context` | `getBaseContext()` | | `File` | `getCacheDir()` | | `ClassLoader` | `getClassLoader()` | | `File` | `getCodeCacheDir()` | | `ContentResolver` | `getContentResolver()` | | `File` | `getDataDir()` | | `File` | `getDatabasePath(String name)` | | `int` | `getDeviceId()` | | `File` | `getDir(String name, int mode)` | | `Display` | `getDisplay()` | | `File` | `getExternalCacheDir()` | | `File[]` | `getExternalCacheDirs()` | | `File` | `getExternalFilesDir(String type)` | | `File[]` | `getExternalFilesDirs(String type)` | | `File[]` | `getExternalMediaDirs()`  **This method is deprecated.** | | `File` | `getFileStreamPath(String name)` | | `File` | `getFilesDir()` | | `Executor` | `getMainExecutor()` | | `Looper` | `getMainLooper()` | | `File` | `getNoBackupFilesDir()` | | `File` | `getObbDir()` | | `File[]` | `getObbDirs()` | | `String` | `getOpPackageName()` | | `String` | `getPackageCodePath()` | | `PackageManager` | `getPackageManager()` | | `String` | `getPackageName()` | | `String` | `getPackageResourcePath()` | | `ContextParams` | `getParams()` | | `SharedPreferences` | `getSharedPreferences(String name, int mode)` | | `String` | `getSystemServiceName(Class<Object> serviceClass)` | | `Drawable` | `getWallpaper()`  **This method is deprecated.** | | `int` | `getWallpaperDesiredMinimumHeight()`  **This method is deprecated.** | | `int` | `getWallpaperDesiredMinimumWidth()`  **This method is deprecated.** | | `void` | `grantUriPermission(String toPackage, Uri uri, int modeFlags)` | | `boolean` | `isDeviceProtectedStorage()` | | `boolean` | `isRestricted()` | | `boolean` | `isUiContext()` | | `boolean` | `moveDatabaseFrom(Context sourceContext, String name)` | | `boolean` | `moveSharedPreferencesFrom(Context sourceContext, String name)` | | `FileInputStream` | `openFileInput(String name)` | | `FileOutputStream` | `openFileOutput(String name, int mode)` | | `SQLiteDatabase` | `openOrCreateDatabase(     String name,     int mode,     SQLiteDatabase.CursorFactory factory )` | | `Drawable` | `peekWallpaper()`  **This method is deprecated.** | | `void` | `rebindService(ServiceConnection conn, Context.BindServiceFlags flags)` | | `void` | `registerComponentCallbacks(ComponentCallbacks callback)` | | `void` | `registerDeviceIdChangeListener(Executor executor, IntConsumer listener)` | | `Intent` | `registerReceiver(BroadcastReceiver receiver, IntentFilter filter)` | | `void` | `removeStickyBroadcast(Intent intent)`  **This method is deprecated.** | | `void` | `removeStickyBroadcastAsUser(Intent intent, UserHandle user)`  **This method is deprecated.** | | `void` | `revokeSelfPermissionsOnKill(Collection<String> permissions)` | | `void` | `revokeUriPermission(Uri uri, int modeFlags)` | | `void` | `sendBroadcast(Intent intent)` | | `void` | `sendBroadcastAsUser(Intent intent, UserHandle user)` | | `void` | `sendOrderedBroadcast(     Intent intent,     int initialCode,     String receiverPermission,     String receiverAppOp,     BroadcastReceiver resultReceiver,     Handler scheduler,     String initialData,     Bundle initialExtras,     Bundle options )` | | `void` | `sendOrderedBroadcastAsUser(     Intent intent,     UserHandle user,     String receiverPermission,     BroadcastReceiver resultReceiver,     Handler scheduler,     int initialCode,     String initialData,     Bundle initialExtras )` | | `void` | `sendStickyBroadcast(Intent intent)`  **This method is deprecated.** | | `void` | `sendStickyBroadcastAsUser(Intent intent, UserHandle user)`  **This method is deprecated.** | | `void` | `sendStickyOrderedBroadcast(     Intent intent,     BroadcastReceiver resultReceiver,     Handler scheduler,     int initialCode,     String initialData,     Bundle initialExtras )`  **This method is deprecated.** | | `void` | `sendStickyOrderedBroadcastAsUser(     Intent intent,     UserHandle user,     BroadcastReceiver resultReceiver,     Handler scheduler,     int initialCode,     String initialData,     Bundle initialExtras )`  **This method is deprecated.** | | `void` | `setWallpaper(Bitmap bitmap)`  **This method is deprecated.** | | `void` | `startActivities(Intent[] intents)` | | `void` | `startActivity(Intent intent)` | | `ComponentName` | `startForegroundService(Intent service)` | | `boolean` | `startInstrumentation(     ComponentName className,     String profileFile,     Bundle arguments )` | | `void` | `startIntentSender(     IntentSender intent,     Intent fillInIntent,     int flagsMask,     int flagsValues,     int extraFlags )` | | `ComponentName` | `startService(Intent service)` | | `boolean` | `stopService(Intent name)` | | `void` | `unbindService(ServiceConnection conn)` | | `void` | `unregisterComponentCallbacks(ComponentCallbacks callback)` | | `void` | `unregisterDeviceIdChangeListener(IntConsumer listener)` | | `void` | `unregisterReceiver(BroadcastReceiver receiver)` | | `void` | `updateServiceBindings(Collection<Context.UpdateBindingParams> params)` | | `void` | `updateServiceGroup(ServiceConnection conn, int group, int importance)` | |
+
+## Public constructors
+
+### ContextThemeWrapper
+
+Added in [1.1.0](/jetpack/androidx/releases/appcompat#1.1.0)
+
+```
+public ContextThemeWrapper()
+```
+
+Creates a new context wrapper with no theme and no base context.
+
+**Note:** A base context **must** be attached using `attachBaseContext` before calling any other method on the newly constructed context wrapper.
+
+### ContextThemeWrapper
+
+Added in [1.1.0](/jetpack/androidx/releases/appcompat#1.1.0)
+
+```
+public ContextThemeWrapper(Context base, @StyleRes int themeResId)
+```
+
+Creates a new context wrapper with the specified theme.
+
+The specified theme will be applied on top of the base context's theme. Any attributes not explicitly defined in the theme identified by themeResId will retain their original values.
+
+| Parameters |
+| --- |
+| `Context base` | the base context |
+| `@StyleRes int themeResId` | the resource ID of the theme to be applied on top of the base context's theme |
+
+### ContextThemeWrapper
+
+Added in [1.1.0](/jetpack/androidx/releases/appcompat#1.1.0)
+
+```
+public ContextThemeWrapper(Context base, Resources.Theme theme)
+```
+
+Creates a new context wrapper with the specified theme.
+
+Unlike `ContextThemeWrapper`, the theme passed to this constructor will completely replace the base context's theme.
+
+| Parameters |
+| --- |
+| `Context base` | the base context |
+| `Resources.Theme theme` | the theme against which resources should be inflated |
+
+## Public methods
+
+### applyOverrideConfiguration
+
+Added in [1.1.0](/jetpack/androidx/releases/appcompat#1.1.0)
+
+```
+public void applyOverrideConfiguration(Configuration overrideConfiguration)
+```
+
+Call to set an "override configuration" on this context -- this is a configuration that replies one or more values of the standard configuration that is applied to the context. See `createConfigurationContext` for more information.
+
+This method can only be called once, and must be called before any calls to getResources or getAssets are made.
+
+### getAssets
+
+```
+public AssetManager getAssets()
+```
+
+### getResources
+
+```
+public Resources getResources()
+```
+
+### getSystemService
+
+```
+public Object getSystemService(String name)
+```
+
+### getTheme
+
+```
+public Resources.Theme getTheme()
+```
+
+### getThemeResId
+
+Added in [1.1.0](/jetpack/androidx/releases/appcompat#1.1.0)
+
+```
+public int getThemeResId()
+```
+
+Returns the resource ID of the theme that is to be applied on top of the base context's theme.
+
+### setTheme
+
+```
+public void setTheme(int resid)
+```
+
+## Protected methods
+
+### attachBaseContext
+
+```
+protected void attachBaseContext(Context newBase)
+```
+
+### onApplyThemeResource
+
+Added in [1.1.0](/jetpack/androidx/releases/appcompat#1.1.0)
+
+```
+protected void onApplyThemeResource(Resources.Theme theme, int resid, boolean first)
+```
+
+Called by setTheme and getTheme to apply a theme resource to the current Theme object. Can override to change the default (simple) behavior. This method will not be called in multiple threads simultaneously.
+
+| Parameters |
+| --- |
+| `Resources.Theme theme` | The Theme object being modified. |
+| `int resid` | The theme style resource being applied to theme. |
+| `boolean first` | Set to true if this is the first time a style is being applied to theme. |

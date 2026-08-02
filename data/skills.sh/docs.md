@@ -1,0 +1,51 @@
+# Documentation
+
+[//]: # (source: [skills.sh](https://skills.sh/docs))
+
+Learn how to discover, install, and use skills with your AI agents.
+
+The `skills` CLI that powers this leaderboard is open source at [github.com/vercel-labs/skills](https://github.com/vercel-labs/skills).
+
+## What are skills?
+
+Skills are reusable capabilities for AI agents. They provide procedural knowledge that helps agents accomplish specific tasks more effectively. Think of them as plugins or extensions that enhance what your AI agent can do.
+
+## Getting started
+
+To install a skill, use the `skills` CLI:
+
+```
+npx skills add vercel-labs/agent-skills
+```
+
+This will install the skill and make it available to your AI agent.
+
+## How skills are ranked
+
+The skills leaderboard ranks skills based on anonymous telemetry data collected from the `skills` CLI. When users install skills, aggregated usage data helps surface the most popular and useful skills in the ecosystem.
+
+This telemetry is completely anonymous and only tracks which skills are being installed—no personal information or usage patterns are collected.
+
+## Browse skills
+
+Visit the [homepage](/) to browse the skills leaderboard and discover new capabilities for your agents.
+
+## Badge
+
+Add an install count badge to your README:
+
+```
+[![skills.sh](https://skills.sh/b/owner/repo)](https://skills.sh/owner/repo)
+```
+
+Replace `owner/repo` with your GitHub source. For example:
+
+```
+[![skills.sh](https://skills.sh/b/anthropics/skills)](https://skills.sh/anthropics/skills)
+```
+
+## How are you securing skills?
+
+There are routine security audits that assess skills and their contents for malicious content. To report security issues, please visit [security.vercel.com](https://security.vercel.com/).
+
+We do our best to maintain a safe ecosystem, but we cannot guarantee the quality or security of every skill listed on skills.sh. We encourage you to review skills before installing and use your own judgment.

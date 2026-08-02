@@ -1,0 +1,237 @@
+# Kotlin Multiplatform
+
+[//]: # (source: [developer.android.com](https://developer.android.com/kotlin/multiplatform))
+
+![Kmp Icon](https://developer.android.com/static/images/picto-icons/kmp.svg)
+
+Write a single codebase that runs on multiple platforms with Kotlin Multiplatform.
+
+[Kotlin Multiplatform (KMP)](https://kotlinlang.org/multiplatform/) is officially supported by Google for sharing business logic between Android and iOS. Kotlin Multiplatform is [stable and production-ready](https://kotlinlang.org/docs/multiplatform/supported-platforms.html#current-platform-stability-levels-for-the-core-kotlin-multiplatform-technology).
+With JetBrains' [Compose Multiplatform (CMP)](https://www.jetbrains.com/compose-multiplatform/), developers can also share UI across platforms.
+
+[![Play Webinar 16 9 Icon](https://developer.android.com/static/images/cluster-illustrations/play-webinar-16-9.svg)](https://developer.android.com/courses/pathways/kotlin-multiplatform)
+
+Pathway
+
+### [Basics of Kotlin Multiplatform](https://developer.android.com/courses/pathways/kotlin-multiplatform)
+
+Start your journey into multi-platform development today. This pathway will guide you through the essentials of Kotlin Multiplatform, from setting up your project, sharing code, and using platform-specific APIs, to migrating the Room Database to Kotlin Multiplatform.
+
+[Learn & earn a badge](https://developer.android.com/courses/pathways/kotlin-multiplatform)
+
+[![Android Development Kit 16 9 Icon](https://developer.android.com/static/images/cluster-illustrations/android-development-kit-16-9.svg)](https://plugins.jetbrains.com/plugin/14936-kotlin-multiplatform)
+
+Android Studio Plugin
+
+### [Kotlin Multiplatform Plugin](https://plugins.jetbrains.com/plugin/14936-kotlin-multiplatform)
+
+We recommend installing the Kotlin Multiplatform Android Studio Plugin developed by JetBrains to improve the development experience within Android Studio.
+
+* **New project wizard**: Create a new multiplatform project within the IDE.
+* **Preflight checks**: Preflight checks help you configure your environment.
+* **Run configurations**: Run, debug, and test applications on both iOS and
+  Android directly from the IDE.
+* **Basic Swift support in the IDE**: Get basic Swift support in the IDE,
+  including cross-language debugging tools, navigation, and quick
+  documentation.
+
+[Go to JetBrains Marketplace](https://plugins.jetbrains.com/plugin/14936-kotlin-multiplatform)
+
+## Benefits of Kotlin Multiplatform
+
+With Kotlin Multiplatform, you can choose what to share across platforms, from just core business logic to the entire application. The following are some of its key benefits:
+
+check\_circle
+
+### Deduplicate code
+
+Your complex business logic doesn't have to be duplicated on each platform.
+
+check\_circle
+
+### No complete rewrite
+
+With Kotlin Multiplatform, you don't need to rewrite your whole application to start sharing code between platforms.
+
+check\_circle
+
+### Native performance
+
+Kotlin Multiplatform compiles into the native way the target platform runs code, delivering performance on par with native implementations.
+
+## Kotlin Multiplatform and Jetpack libraries
+
+Many of our Jetpack libraries have already been migrated to be KMP-ready. The following Jetpack libraries provide KMP support:
+
+![Android logo](/static/images/logos/android.svg)
+**Built by Android**
+![JetBrains logo](/static/images/logos/jetbrains.svg)
+**Built by JetBrains**
+device\_unknown
+**Not supported**
+
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Library | Latest Release | Android | iOS | JVM | Web || [annotation](/jetpack/androidx/releases/annotation) | July 15, 2026    * [1.10.0](/jetpack/androidx/releases/annotation#1.10.0) * [1.11.0-alpha01](/jetpack/androidx/releases/annotation#1.11.0-alpha01) |  |  |  |  |
+| [collection](/jetpack/androidx/releases/collection) | March 11, 2026    * [1.6.0](/jetpack/androidx/releases/collection#1.6.0) |  |  |  |  |
+| [compose](/jetpack/androidx/releases/compose-runtime) | July 01, 2026    * [1.11.4](/jetpack/androidx/releases/compose-runtime#1.11.4) * [1.12.0-beta02](/jetpack/androidx/releases/compose-runtime#1.12.0-beta02) |  |  |  |  |
+| [datastore](/jetpack/androidx/releases/datastore)     [article Documentation](/kotlin/multiplatform/datastore) | May 06, 2026    * [1.2.1](/jetpack/androidx/releases/datastore#1.2.1) * [1.3.0-alpha09](/jetpack/androidx/releases/datastore#1.3.0-alpha09) |  |  |  |  |
+| [lifecycle](/jetpack/androidx/releases/lifecycle)     [article Documentation](https://kotlinlang.org/docs/multiplatform/compose-lifecycle.html) | June 17, 2026    * [2.11.0](/jetpack/androidx/releases/lifecycle#2.11.0) |  |  |  |  |
+| [viewModel](/jetpack/androidx/releases/lifecycle)     [article Documentation](/kotlin/multiplatform/viewmodel) | June 17, 2026    * [2.11.0](/jetpack/androidx/releases/lifecycle#2.11.0) |  |  |  |  |
+| [viewModel-compose](/jetpack/androidx/releases/lifecycle)     [article Documentation](https://kotlinlang.org/docs/multiplatform/compose-viewmodel.html) | June 17, 2026    * [2.11.0](/jetpack/androidx/releases/lifecycle#2.11.0) |  |  |  |  |
+| [navigation](/jetpack/androidx/releases/navigation)     [article Documentation](https://kotlinlang.org/docs/multiplatform/compose-navigation.html) | July 01, 2026    * [2.9.8](/jetpack/androidx/releases/navigation#2.9.8) * [2.10.0-alpha06](/jetpack/androidx/releases/navigation#2.10.0-alpha06) |  |  |  |  |
+| [navigation3](/jetpack/androidx/releases/navigation3) | July 15, 2026    * [1.1.4](/jetpack/androidx/releases/navigation3#1.1.4) * [1.2.0-alpha06](/jetpack/androidx/releases/navigation3#1.2.0-alpha06) |  |  |  |  |
+| [navigationevent](/jetpack/androidx/releases/navigationevent) | July 15, 2026    * [1.1.2](/jetpack/androidx/releases/navigationevent#1.1.2) * [1.2.0-alpha02](/jetpack/androidx/releases/navigationevent#1.2.0-alpha02) |  |  |  |  |
+| [paging](/jetpack/androidx/releases/paging) | May 06, 2026    * [3.5.0](/jetpack/androidx/releases/paging#3.5.0) |  |  |  |  |
+| [room](/jetpack/androidx/releases/room)     [article Documentation](/kotlin/multiplatform/room) | November 19, 2025    * [2.8.4](/jetpack/androidx/releases/room#2.8.4) |  |  |  | device\_unknown |
+| [savedstate](/jetpack/androidx/releases/savedstate) | May 19, 2026    * [1.5.0](/jetpack/androidx/releases/savedstate#1.5.0) |  |  |  |  |
+| [sqlite](/jetpack/androidx/releases/sqlite)     [article Documentation](/kotlin/multiplatform/sqlite) | July 01, 2026    * [2.7.0](/jetpack/androidx/releases/sqlite#2.7.0) |  |  |  |  |
+
+If you have feedback on these libraries, share it through the [issue tracker](https://issuetracker.google.com/issues/new?component=1337890&template=1803002).
+
+Libraries published by JetBrains wrap Android artifacts together with artifacts for other platforms so you can seamlessly consume any and all of them in your multiplatform projects. To learn about the underlying publishing process, see [How multiplatform Jetpack libraries are packaged](https://kotlinlang.org/docs/multiplatform/compose-multiplatform-jetpack-libraries.html).
+
+## Tools support
+
+You can open, edit, and run multiplatform projects in Android Studio.
+
+### [KMP module wizard](https://developer.android.com/kotlin/multiplatform/migrate)
+
+You can start migrating to KMP by creating a KMP shared module within Android Studio. This module automatically applies all the necessary plugins, including the Android-KMP plugin, to start developing Android and iOS apps.
+
+[Add KMP to your project](https://developer.android.com/kotlin/multiplatform/migrate)
+
+### [Live Edit for JetBrains' Compose Multiplatform](https://developer.android.com/develop/ui/compose/tooling/iterative-development)
+
+Live Edit works when building on Android Devices editing any code within the project, not just in `androidMain`.
+
+[Learn more](https://developer.android.com/develop/ui/compose/tooling/iterative-development)
+
+### [Previews for JetBrains' Compose Multiplatform](https://developer.android.com/develop/ui/compose/tooling/previews)
+
+Previews for Jetpack Compose are also available for JetBrains' Compose Multiplatform from the `commonMain` source set.
+
+[Learn more](https://developer.android.com/develop/ui/compose/tooling/previews)
+
+## Apps built with Kotlin Multiplatform
+
+Many apps are already successfully using Kotlin Multiplatform.
+
+![Blinkit Image](https://developer.android.com/static/images/kotlin/kmp-apps/blinkit.png)
+
+Blinkit
+
+![Cash App Icon](https://developer.android.com/static/images/kotlin/kmp-apps/cash-app.svg)
+
+Cash App
+
+![Duolingo Icon](https://developer.android.com/static/images/kotlin/kmp-apps/duolingo.svg)
+
+Duolingo
+
+![Forbes Image](https://developer.android.com/static/images/kotlin/kmp-apps/forbes.png)
+
+Forbes
+
+![Google Docs Icon](https://developer.android.com/static/images/kotlin/kmp-apps/google-docs.svg)
+
+Google Docs
+
+![Jiohotstar Image](https://developer.android.com/static/images/kotlin/kmp-apps/jiohotstar.png)
+
+JioHotstar
+
+![Stone Icon](https://developer.android.com/static/images/kotlin/kmp-apps/stone.svg)
+
+Stone
+
+![Swiggy Icon](https://developer.android.com/static/images/kotlin/kmp-apps/swiggy.svg)
+
+Swiggy
+
+![Ultrahuman Icon](https://developer.android.com/static/images/kotlin/kmp-apps/ultrahuman.svg)
+
+Ultrahuman
+
+![Wrike Icon](https://developer.android.com/static/images/kotlin/kmp-apps/wrike.svg)
+
+Wrike
+
+![Zomato Image](https://developer.android.com/static/images/kotlin/kmp-apps/zomato.png)
+
+Zomato
+
+## Supported platforms in Jetpack
+
+Jetpack library releases for officially supported platforms—Android and iOS—maintain the same quality and compatibility requirements. However, as we work to expand Jetpack's Kotlin Multiplatform support to other platforms, the tooling and infrastructure support may be a work in progress.
+
+looks\_one
+
+### Tier 1
+
+Code is fully tested in CI; including both host-side and on-device tests. We're tracking source and binary compatibility in accordance with our [semantic versioning policies](/jetpack/androidx/versions).
+
+* **Android**
+* **JVM**
+* **iOS**
+
+looks\_two
+
+### Tier 2
+
+Code is partially tested on CI; limited to host-side tests. We don't track source or binary compatibility.
+
+* **macOS**
+* **Linux**
+
+looks\_3
+
+### Tier 3
+
+Code is untested on CI. No source or binary compatibility tracking.
+
+* **watchOS**
+* **tvOS**
+* **Windows**
+* **JavaScript**
+* **WASM**
+
+## Additional resources
+
+For further information about the overall multiplatform ecosystem and more advanced configurations, see the official [Kotlin Multiplatform documentation](https://kotlinlang.org/docs/multiplatform-intro.html).
+
+[![Layout Icon](https://developer.android.com/static/images/picto-icons/layout.svg)](https://github.com/android/kotlin-multiplatform-samples)
+
+### [Kotlin Multiplatform samples](https://github.com/android/kotlin-multiplatform-samples)
+
+A set of Kotlin Multiplatform samples that demonstrate how to use the Jetpack libraries for Android and iOS.
+
+[Sample](https://github.com/android/kotlin-multiplatform-samples)
+
+[![Theming Icon](https://developer.android.com/static/images/picto-icons/theming.svg)](https://developer.android.com/codelabs/kmp-get-started)
+
+### [Get started with Kotlin Multiplatform](https://developer.android.com/codelabs/kmp-get-started)
+
+Guided onboarding on how to add KMP to your project.
+
+[Codelab](https://developer.android.com/codelabs/kmp-get-started)
+
+[![Graph Line Icon](https://developer.android.com/static/images/picto-icons/graph-line.svg)](https://developer.android.com/codelabs/kmp-migrate-room)
+
+### [Migrate Room to Kotlin Multiplatform](https://developer.android.com/codelabs/kmp-migrate-room)
+
+Guided migration of Android-only Room to KMP.
+
+[Codelab](https://developer.android.com/codelabs/kmp-migrate-room)
+
+[![Kmp Icon](https://developer.android.com/static/images/picto-icons/kmp.svg)](https://kotlinlang.org/docs/multiplatform/get-started.html)
+
+### [In-depth Guidance](https://kotlinlang.org/docs/multiplatform/get-started.html)
+
+More in-depth guidance is available in Kotlin Multiplatform documentation hub on Kotlinlang.org.
+
+[Documentation](https://kotlinlang.org/docs/multiplatform/get-started.html)
+
+Learn what Kotlin Multiplatform is, how it works, and the benefits of using it.
+
+[Video](https://www.youtube.com/watch?v=gP5Y-ct6QXI)

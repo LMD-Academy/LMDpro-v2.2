@@ -1,0 +1,23 @@
+--- source: https://skills.sh/get-convex/agent-skills/convex-create-component/security/snyk ---
+
+[skills](/)/[get-convex](/get-convex)/[agent-skills](/get-convex/agent-skills)/[convex-create-component](/get-convex/agent-skills/convex-create-component)/Snyk
+
+# convex-create-component
+
+Pass
+
+Audited by Snyk on May 1, 2026
+
+Risk Level: LOW
+
+Full Analysis
+
+No issues detected.
+
+Audit Metadata
+
+Risk Level
+:   LOW
+
+Analyzed
+:   May 1, 2026, 04:54 AM

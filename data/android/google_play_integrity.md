@@ -1,0 +1,91 @@
+# Play integrity and signing services
+
+[//]: # (source: [developer.android.com](https://developer.android.com/google/play/integrity))
+
+![Play Integrity Icon Icon](https://developer.android.com/static/images/google/play/integrity/play-integrity-icon.svg)
+
+Google Play's integrity and signing services help you to ensure that users experience your apps and games in the way you intend.
+
+[Play Integrity API docs](https://developer.android.com/google/play/integrity/overview)
+
+---
+
+## Partners using Play Integrity API
+
+![Uber](/static/images/google/play/integrity/partner-logos/Uber.svg)
+
+![TikTok](/static/images/google/play/integrity/partner-logos/TikTok.png)
+
+![Stripe](/static/images/google/play/integrity/partner-logos/Stripe.png)
+
+![Faceapp](/static/images/google/play/integrity/partner-logos/Faceapp-dark.png)
+
+![Kabam](/static/images/google/play/integrity/partner-logos/Kabam.png)
+
+![Wooga](/static/images/google/play/integrity/partner-logos/Wooga.png)
+
+![Radar](/static/images/google/play/integrity/partner-logos/Radar.svg)
+
+![Zimperium](/static/images/google/play/integrity/partner-logos/Zimperium.png)
+
+![Paytm](/static/images/google/play/integrity/partner-logos/Paytm.png)
+
+![Remini](/static/images/google/play/integrity/partner-logos/Remini.svg)
+
+![Security 2 Icon](https://developer.android.com/static/images/picto-icons/security-2.svg)
+
+## Play Integrity API
+
+Call the Integrity API at important moments in your app to check that user actions and requests are coming from your unmodified app binary, installed by Google Play, running on a genuine Android device. Your app's backend server can decide what to do next to prevent abuse, unauthorized access, and attacks.
+
+### [Overview of Play Integrity API](https://developer.android.com/google/play/integrity/overview)
+
+Learn how Play Integrity API works, review security considerations and recommended practices, and get started with your integration.
+
+### [Set up Play Integrity API](https://developer.android.com/google/play/integrity/setup)
+
+Learn how to set up your app or game to use the Play Integrity API.
+
+### [API reference](https://developer.android.com/google/play/integrity/reference/com/google/android/play/core/classes)
+
+See the Play Integrity API reference.
+
+### [Additional tools](https://developer.android.com/google/play/integrity/additional-tools)
+
+Test your integration and learn how to generate responses from any device for debugging and troubleshooting.
+
+![Lock Icon](https://developer.android.com/static/images/picto-icons/lock.svg)
+
+## Automatic protection
+
+Google Play’s automatic protection is a service that helps you protect your apps and games against unauthorized redistribution and piracy. When users get your protected app from an unknown distribution channel, they’ll be prompted to get your official app from Google Play.
+
+### [Overview of automatic protection](https://support.google.com/googleplay/android-developer/answer/10183279)
+
+View the help center page to learn more about using automatic protection.
+
+### [Turn on automatic protection](https://play.google.com/console/u/0/developers/app/protect-with-play)
+
+You can turn on protection in your Play Console.
+
+![Key Icon](https://developer.android.com/static/images/picto-icons/key.svg)
+
+## Play App Signing
+
+Play App Signing manages and protects your app signing key on Google’s secure infrastructure and offers upgrade options to increase security. Google Play uses your app signing key to generate optimized, distribution APKs from your Android App Bundles.
+
+### [How to sign your app](https://developer.android.com/studio/publish/app-signing)
+
+Learn about key concepts related to app signing, how to sign your app using Android Studio, and how to configure Play App Signing.
+
+### [Use Play App Signing](https://support.google.com/googleplay/android-developer/answer/9842756)
+
+Learn more about using Play App Signing in the Google Play Console help center.
+
+### [Upgrade your app signing key](https://support.google.com/googleplay/android-developer/answer/9842756#upgrade)
+
+Learn how to start using a new, cryptographically stronger signing key in the Google Play Console help center.
+
+### [Android App Bundles](https://developer.android.com/guide/app-bundle)
+
+See the Android App Bundle documentation.

@@ -1,0 +1,135 @@
+# Design for Android
+
+[//]: # (source: [developer.android.com](https://developer.android.com/design/ui))
+
+Design beautiful and modern Android apps that meet your user where they are, whether browsing their phone, reading on their tablet, glancing at their wrist, connected to a display, or watching TV.
+
+[Get inspired by UX designs for a variety of screens →](https://developer.android.com/design/ui/gallery)
+
+[![Hero Image](/images/design/ui/hero.jpg)](/static/videos/design/ui/hero.mp4)
+
+## Design for mobile
+
+Create a beautiful and usable modern app design using Android themes, components, and adaptive layouts.
+
+[Explore mobile design →](https://developer.android.com/design/ui/mobile)
+
+![Mobile Promo Image](https://developer.android.com/static/images/design/ui/mobile-promo.png)
+
+## Enhance your app's productivity
+
+Make sure your app is prepared with adaptive UI and interactions that support all desktop windowing and input methods.
+
+[Explore desktop design →](https://developer.android.com/design/ui/desktop)
+[Get inspired by UX designs for a variety of screens →](https://developer.android.com/design/ui/gallery)
+
+![Desktop Hero Image](https://developer.android.com/static/images/design/ui/desktop_hero.webp)
+
+## Boundless creation with XR
+
+Create groundbreaking immersive experiences with powerful tools that transform how we interact with digital content and the world around us.
+
+[Design for XR headsets & wired XR glasses →](https://developer.android.com/design/ui/xr)
+
+[
+
+](/static/videos/design/ui/xr-banner-opt.mp4) [
+
+](/static/videos/design/ui/xr-banner-opt_dt.mp4)
+
+## Extend your app for all-day wear
+
+Create augmented experiences that feel like a natural extension of the user's perception, providing convenient access to information.
+
+[Design for AI glasses →](https://developer.android.com/design/ui/ai-glasses)
+
+[
+
+](/static/images/design/ui/glasses_hero.webm) [
+
+](/static/images/design/ui/glasses_hero.webm)
+
+## Enhance your app with widgets
+
+Use widgets to help users quickly engage with your app content and features.
+
+[Explore widget design →](https://developer.android.com/design/ui/widget)
+
+![Promo Widgets Image](https://developer.android.com/static/images/design/ui/promo-widgets.png)
+
+## Provide at-a-glance information on Wear OS
+
+A smartwatch adds a great surface for quick and frequent interactions with your app. Start designing experiences for Wear OS by Google.
+
+[Explore Wear OS design →](https://developer.android.com/design/ui/wear)
+
+![Landing Hero Image](https://developer.android.com/static/wear/images/design/landing-hero.webp)
+
+## Design for TV
+
+Start designing your Android TV app experience using our guides and kits.
+
+[Explore TV design →](https://developer.android.com/design/ui/tv)
+[Get inspired for TV design →](https://developer.android.com/design/ui/tv/samples/overview)
+
+![Promo Tv Image](https://developer.android.com/static/images/design/ui/promo-tv.png)
+
+## Design for Cars
+
+Start designing your app experience for Android Auto and Android Automotive OS using our guides and templates.
+
+[Explore Cars design →](https://developer.android.com/design/ui/cars)
+
+![Auto Hero Image](https://developer.android.com/static/images/design/ui/auto-hero.png)
+
+## Try out a case study or sample
+
+Start designing for Android devices with one of our Figma-based case studies or app samples.
+
+[![Card Nia Image](https://developer.android.com/static/images/design/ui/card-nia.png)](https://www.figma.com/community/file/1164313362327941158)
+
+### [Mobile & large screens](https://www.figma.com/community/file/1164313362327941158)
+
+Get the Now in Android case study (in Figma) and explore our celebrated Play Store published media sample app.
+
+[Go to the Now in Android case study](https://www.figma.com/community/file/1164313362327941158)
+
+[![Card Wear Image](https://developer.android.com/static/images/design/ui/card-wear.png)](https://developer.android.com/design/ui/wear/samples)
+
+### [Wear](https://developer.android.com/design/ui/wear/samples)
+
+Explore our collection of design kits and templates for Wear OS.
+
+[See Wear samples](https://developer.android.com/design/ui/wear/samples)
+
+[![Card Tv Image](https://developer.android.com/static/images/design/ui/card-tv.png)](https://www.figma.com/@tv)
+
+### [TV](https://www.figma.com/@tv)
+
+Explore our Figma-based design kits for TV apps.
+
+[Go to the TV Figma community](https://www.figma.com/@tv)
+
+[![Card Cars Image](https://developer.android.com/static/images/design/ui/card-cars.png)](https://www.figma.com/community/file/1506418622696735515)
+
+### [Cars](https://www.figma.com/community/file/1506418622696735515)
+
+Explore our design kit for the Android for Cars App Library.
+
+[Go to the Figma kit](https://www.figma.com/community/file/1506418622696735515)
+
+[![Card Widget Image](https://developer.android.com/static/images/design/ui/card-widget.png)](https://www.figma.com/community/file/1478519017421157788)
+
+### [Widgets](https://www.figma.com/community/file/1478519017421157788)
+
+Design widgets using our canonical layouts.
+
+[Go to the Figma kit](https://www.figma.com/community/file/1478519017421157788)
+
+[![Card Cover Wide Onboard Image](https://developer.android.com/static/images/design/ui/card-cover-wide_onboard.png)](https://www.figma.com/community/file/1638424504350167811/android-onboarding-kit)
+
+### [Android onboarding kit](https://www.figma.com/community/file/1638424504350167811/android-onboarding-kit)
+
+Get started with our comprehensive onboarding figma kit.
+
+[Go to the Figma kit](https://www.figma.com/community/file/1638424504350167811/android-onboarding-kit)

@@ -1,0 +1,64 @@
+--- source: https://developer.android.com/reference/androidx/annotation/MainThread ---
+
+* [Android Developers](https://developer.android.com/)
+* [Develop](https://developer.android.com/develop)
+* [API reference](https://developer.android.com/reference)
+
+Stay organized with collections
+
+Save and categorize content based on your preferences.
+
+
+
+
+
+# MainThread
+
+Artifact: [androidx.annotation:annotation](/jetpack/androidx/releases/annotation)
+
+[View Source](https://cs.android.com/search?q=file:androidx/annotation/MainThread.kt+class:androidx.annotation.MainThread)
+
+Added in [1.0.0](/jetpack/androidx/releases/annotation#1.0.0)
+
+---
+
+[Kotlin](/reference/kotlin/androidx/annotation/MainThread "View this page in Kotlin")
+|Java
+
+```
+@MustBeDocumented  
+@Retention(value = AnnotationRetention.BINARY)  
+@Target(allowedTargets = [AnnotationTarget.FUNCTION, AnnotationTarget.PROPERTY_GETTER, AnnotationTarget.PROPERTY_SETTER, AnnotationTarget.CONSTRUCTOR, AnnotationTarget.ANNOTATION_CLASS, AnnotationTarget.CLASS, AnnotationTarget.VALUE_PARAMETER])  
+public annotation MainThread
+```
+
+---
+
+Denotes that the annotated method should only be called on the main thread. If the annotated element is a class, then all methods in the class should be called on the main thread.
+
+Example:
+
+```
+@MainThread  
+public void deliverResult(D data) { ... }
+```
+
+**Note:** Ordinarily, an app's main thread is also the UI thread. However, under special circumstances, an app's main thread might not be its UI thread; for more information, see [Thread annotations](https://developer.android.com/studio/write/annotations#thread-annotations).
+
+| See also |
+| --- |
+| `UiThread` |  |
+
+## Summary
+
+| Public constructors |
+| --- |
+| `MainThread()` |
+
+## Public constructors
+
+### MainThread
+
+```
+public MainThread()
+```

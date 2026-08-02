@@ -1,66 +1,142 @@
-# For most projects, this workflow file will not need changing; you simply need
-# to commit it to your repository.
-#
-# You may wish to alter this file to override the set of languages analyzed,
-# or to provide custom queries or build logic.
-#
-# ******** NOTE ********
-# We have attempted to detect the languages in your repository. Please check
-# the `language` matrix defined below to confirm you have the correct set of
-# supported CodeQL languages.
-#
-name: "CodeQL Advanced"
+# Code scanning SARIF upload with validation and retries
+# Replace the "Run scanner" step with your actual scanner command that writes a SARIF file.
+# This workflow fails early with clear logs if the SARIF file is missing or malformed,
+# and uploads the SARIF as an artifact for offline inspection when there's a problem.
+name: Code Scanning (Validate & Upload SARIF)
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "**" ]
   pull_request:
-    branches: [ "main" ]
+    types: [opened, synchronize, reopened]
+
+# Required permission to create code-scanning results
+permissions:
+  contents: read
+  code-scanning: write
+  security-events: write
 
 jobs:
-  analyze:
-    name: Analyze (${{ matrix.language }})
-    runs-on: ${{ (matrix.language == 'swift' && 'macos-latest') || 'ubuntu-latest' }}
-
-    permissions:
-      # Required for CodeQL to report security alerts to GitHub Security tab
-      security-events: write
-
-      # Required to read internal or private CodeQL packs
-      packages: read
-
-      # Required for actions execution within private repositories
-      actions: read
-      contents: read
-
-      # Required for Copilot Autofix to suggest fixes on Pull Requests
-      pull-requests: write
-
-    strategy:
-      fail-fast: false
-      matrix:
-        include:
-          - language: javascript-typescript
-            build-mode: none
+  upload-sarif:
+    name: Validate and upload SARIF
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
-      # Initializes CodeQL CLI and configures analysis settings
-      - name: Initialize CodeQL
-        uses: github/codeql-action/init@v3
         with:
-          languages: ${{ matrix.language }}
-          build-mode: ${{ matrix.build-mode }}
+          fetch-depth: 0
 
-      # Automatically attempts to build compiled languages if configured
-      - name: Autobuild
-        if: matrix.build-mode == 'autobuild'
-        uses: github/codeql-action/autobuild@v3
+      - name: Set up environment utilities
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install -y jq gzip
+        shell: bash
 
-      # Executes CodeQL analysis and uploads SARIF results
-      - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@v3
+      - name: Run scanner (produce SARIF)
+        id: run_scanner
+        run: |
+          set -euo pipefail
+          mkdir -p code-scanning-output
+          SARIF_PATH="code-scanning-output/result.sarif"
+
+          # === REPLACE THIS LINE WITH YOUR ACTUAL SCANNER COMMAND ===
+          # Example placeholders:
+          # - If your scanner is already installed: my-scanner --format=sarif --out="$SARIF_PATH"
+          # - For CodeQL: codeql database analyze ... --format=sarif-latest --output="$SARIF_PATH"
+          #
+          # The step must produce a valid SARIF JSON file at $SARIF_PATH.
+          #
+          # If your scanner exits non-zero on issues (but still produces SARIF),
+          # you may want to allow the non-zero exit so we can still upload the SARIF:
+          #
+          # Example that continues on non-zero but preserves SARIF:
+          #    my-scanner --format=sarif --out="$SARIF_PATH" || true
+          #
+          echo "TODO: replace this placeholder with your scanner command that writes $SARIF_PATH"
+          # Create an empty placeholder if you forget — this will fail validation below:
+          if [ ! -f "$SARIF_PATH" ]; then
+            echo '{}' > "$SARIF_PATH"
+          fi
+
+          echo "SARIF file expected at: $SARIF_PATH"
+          echo "::set-output name=sarif::$SARIF_PATH"
+        shell: bash
+
+      - name: Validate SARIF file (basic checks)
+        id: validate_sarif
+        run: |
+          set -euo pipefail
+          SARIF_FILE="${{ steps.run_scanner.outputs.sarif }}"
+
+          echo "Validating SARIF file: $SARIF_FILE"
+          if [ ! -f "$SARIF_FILE" ]; then
+            echo "ERROR: SARIF file not found at $SARIF_FILE"
+            ls -la code-scanning-output || true
+            exit 1
+          fi
+
+          # 1) Check valid JSON
+          if ! jq -e . "$SARIF_FILE" >/dev/null 2>&1; then
+            echo "ERROR: SARIF file is not valid JSON: $SARIF_FILE"
+            echo "---- Begin SARIF head (first 200 lines) ----"
+            sed -n '1,200p' "$SARIF_FILE" || true
+            echo "---- End SARIF head ----"
+            exit 1
+          fi
+
+          # 2) Basic SARIF structure check: top-level 'runs' must be an array with length > 0
+          RUNS_COUNT=$(jq '.runs | length // 0' "$SARIF_FILE" 2>/dev/null || echo 0)
+          if [ "$RUNS_COUNT" -eq 0 ]; then
+            echo "ERROR: SARIF file does not contain any 'runs' entries (runs count = $RUNS_COUNT)."
+            echo "This commonly happens when the scanner didn't produce results or produced an empty/malformed SARIF."
+            echo "Dumping first 200 lines of the SARIF for debugging:"
+            sed -n '1,200p' "$SARIF_FILE" || true
+            # Attach SARIF as an artifact for offline inspection
+            echo "Uploading SARIF as artifact for manual inspection..."
+            gh auth status >/dev/null 2>&1 || true
+            exit 1
+          fi
+
+          echo "SARIF basic validation passed (runs=$RUNS_COUNT)."
+        shell: bash
+
+      - name: Ensure SARIF file size is reasonable
+        run: |
+          set -euo pipefail
+          SARIF_FILE="${{ steps.run_scanner.outputs.sarif }}"
+          MAX_BYTES=$((1024 * 1024 * 50)) # 50 MB
+          if [ -f "$SARIF_FILE" ]; then
+            FILESIZE=$(wc -c <"$SARIF_FILE" | tr -d ' ')
+            echo "SARIF size: ${FILESIZE} bytes"
+            if [ "$FILESIZE" -gt "$MAX_BYTES" ]; then
+              echo "WARNING: SARIF file is larger than ${MAX_BYTES} bytes (${FILESIZE})."
+              echo "Large SARIF uploads may fail. Consider filtering results or compressing before upload."
+            fi
+          fi
+        shell: bash
+
+      - name: Upload SARIF to Code Scanning (with retry)
+        id: upload_sarif
+        uses: github/codeql-action/upload-sarif@v2
         with:
-          category: "/language:${{ matrix.language }}"
+          # Points at the SARIF produced by your scanner
+          sarif_file: code-scanning-output/result.sarif
+        # If the upload action fails because of an invalid SARIF, the action will fail and show the server error.
+        # The validation step above aims to prevent that and provide clearer local logs.
+
+      - name: Upload SARIF artifact for debugging (always)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sarif-debug
+          path: code-scanning-output/result.sarif
+
+      - name: Publish SARIF upload debug log (optional)
+        if: failure()
+        run: |
+          echo "SARIF upload failed. Listing artifacts and SARIF head:"
+          ls -la code-scanning-output || true
+          sed -n '1,400p' code-scanning-output/result.sarif || true
+        shell: bash

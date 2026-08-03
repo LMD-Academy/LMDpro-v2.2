@@ -1,8 +1,3 @@
----
-Version: "2.2.0"
-"LMDpro — an autonomous AI agentic eLearning ecosystem"
----
-
 # LMDpro | Autonomous AI Agentic Global eLearning Ecosystem 
 
 [![Build Status](https://img.shields.io/badge/Build-Passing-emerald)](https://github.com)
